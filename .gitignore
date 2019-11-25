@@ -9,3 +9,13 @@ data/*
 *.test.ipynb
 
 .ipynb_checkpoints
+
+simple_data/
+
+# DB Stuff
+db.sql
+
+# Pycache
+__pycache__/
+
+.vscode/
