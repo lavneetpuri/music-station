@@ -9,9 +9,6 @@ data/raw
 
 .ipynb_checkpoints
 
-# DB Stuff
-db.sql
-
 # Pycache
 __pycache__/
 
