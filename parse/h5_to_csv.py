@@ -11,14 +11,11 @@ import os, sys
 # simplify access to data for further analysis.
 #
 # - Usage - - -
-# python3 main.py <raw_dataset_dir> <output_file>
-# Pass path to the dataset folder and output file name
-# as first and second command line arguments, respectively.
-# e.g. python3 h5_to_csv.py ../MillionSongSubset output.csv
+# python3 h5_to_csv.py <raw_dataset_dir> <output_file>
 #
 # - Note - - -
 # Be mindful of the size of the raw dataset:
-# Collapsing big HDF into large files may not be compatible
+# Collapsing big HDF structure into large file may not be compatible
 # with your file system. Increase num_out_files if you notice issues.
 ################################################################
 
