@@ -54,6 +54,12 @@ def parse_song(filename):
     song_info = pd.DataFrame(song['metadata']['songs'][:])
     # combine info from analysis
     song_info = song_info.join(pd.DataFrame(song['analysis']['songs'][:]))
+
+    # decode b' string columns
+    song_info.track_id = song_info.track_id.str.decode('utf-8')
+    song_info.title = song_info.title.str.decode('utf-8')
+    song_info.artist_id = song_info.artist_id.str.decode('utf-8')
+    
     return song_info
 
 def main(dataset_path, output_file):
@@ -71,7 +77,6 @@ def main(dataset_path, output_file):
             songs = pd.concat([songs, song])
 
     # write as csv file
-    # TODO: remove b string prefix from dataframe
     songs = songs.set_index('track_id')
     songs.to_csv(output_file)
 
