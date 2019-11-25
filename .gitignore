@@ -1,10 +1,10 @@
 # Dependencies
 requirements.txt
 
-# Datasets
-data/*
+# Raw datasets from millionsongdataset.com
+data/raw
 
-# experimental ipython notebooks
+# Experimental ipython notebooks
 *.test.ipynb
 
 .ipynb_checkpoints
