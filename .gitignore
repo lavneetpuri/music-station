@@ -9,8 +9,6 @@ data/raw
 
 .ipynb_checkpoints
 
-simple_data/
-
 # DB Stuff
 db.sql
 
