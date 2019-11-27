@@ -42,7 +42,11 @@ html, body {
   color: #333;
   font-size: 20px;
 }
-""".replace('{\n', '{{').replace('}\n', '}}').replace('\n','')
+"""
+# replace css curly braces so that it does not interfere
+# with string interpolation
+style_body = style_body.replace('{\n', '{{').replace('}\n', '}}')
+print('done')
 
 # returns the html with side-by-side rendered playlists
 # pass a list of PlayList objects
@@ -71,8 +75,9 @@ def build_frame(playlists):
     </head>
     <body><div class="playlists-container">{html_body}</div></body>
     </html>
-    """.replace('\n', '')
-    return HTML(frame)
+    """
+    # render frame without newlines to prevent undefined behavior between browsers
+    return HTML(frame.replace('\n', ''))
 
 # returns html structure of the given playlist 
 def render_playlist(playlist, song_frame_height=110):
