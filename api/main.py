@@ -9,18 +9,22 @@ def fetch_client_id():
     req = requests.get(token_script_url)
     if req.status_code != 200:
         raise Warning(
-            f'Unable to fetch client_id: HTTP Code, {req.status_code}')
+            f'HTTP {req.status_code}: Unable to fetch client_id')
 
     id_pattern = re.compile('query:{client_id:"(.+?)"')
     matches = id_pattern.findall(req.content.decode('utf-8'))
     if len(matches) == 0:
-        raise Warning('Unable to fetch client_id: Not Found In Script.')
+        raise Warning('Missing Field: Unable to fetch client_id')
 
     return matches[0]
 
 # Static class with helper methods for communicating with the soundcloud API
 class SoundCloudAPI:
-    CLIENT_ID = fetch_client_id()
+    try:
+        CLIENT_ID = fetch_client_id()
+    except Warning as w:
+        print(w)
+        CLIENT_ID = ''
     BASE_URL = 'https://api-v2.soundcloud.com'
 
     # query can be a combination of song name and artist
@@ -32,11 +36,11 @@ class SoundCloudAPI:
         req = requests.get(search_url)
         if req.status_code != 200:
             raise Warning(
-                f'Unable to fetch song metadata: HTTP Code, {req.status_code}')
+                f'HTTP {req.status_code}: Unable to fetch song metadata')
 
         data = req.json()
         if not data['total_results']:
-            return None
+            return {}
         
         # return the top result
-        return song['collection'][0]
+        return data['collection'][0]
