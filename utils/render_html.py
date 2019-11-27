@@ -35,7 +35,7 @@ html, body {
 }
 .notfound .artist {
   color: #666;
-  font-size: 15px;
+  font-size: 13px;
   text-decoration: underline;
 }
 .notfound .title {
