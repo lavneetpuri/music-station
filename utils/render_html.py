@@ -1,6 +1,6 @@
+import urllib.parse
 from IPython.core.display import HTML
 from models.playlist import PlayList
-import urllib.parse
 
 style_body = """
 html, body {
