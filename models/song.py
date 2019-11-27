@@ -8,7 +8,9 @@ class Song:
 
         self.id = track_id
         self.name = track.title.values[0]
-        # self.artist = track.artist_name
+        # TODO: artist_name is not present in songs dataset
+        # self.artist = track.artist_name.values[0]
+        self.artist = 'Some Artist'
 
         try:
             metadata = API.song_metadata(self.name)
