@@ -25,7 +25,7 @@ html, body {
   box-sizing: border-box;
   padding: 10px;
   height: {not_found_height}px;
-  margin-top: -6px;
+  margin-bottom: 6px;
   font-weight: 100;
 }
 .notfound .info {
@@ -64,7 +64,7 @@ def build_frame(playlists):
             {
                 style_body.format(
                     num_playlists=len(playlists),
-                    not_found_height=0.8 * song_frame_height
+                    not_found_height=song_frame_height
                 )
             }
         </style>
