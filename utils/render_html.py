@@ -55,7 +55,7 @@ def build_frame(playlists):
 
         html_body += render_playlist(plist, song_frame_height)
     
-    return f"""
+    frame = f"""
     <html>
     <head>
         <meta charset="utf-8">
@@ -72,6 +72,7 @@ def build_frame(playlists):
     <body><div class="playlists-container">{html_body}</div></body>
     </html>
     """.replace('\n', '')
+    return HTML(frame)
 
 # returns html structure of the given playlist 
 def render_playlist(playlist, song_frame_height=110):
