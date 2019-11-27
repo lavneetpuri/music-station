@@ -19,5 +19,3 @@ class PlayList:
         except ValueError as v:
             print(v)
             print('songs not initialized')
-        
-    
