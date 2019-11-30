@@ -1,4 +1,5 @@
 from data.main import songs
+from data.main import artists
 from api.main import SoundCloudAPI as API
 
 class Song:
@@ -8,9 +9,10 @@ class Song:
 
         self.id = track_id
         self.name = track.title.values[0]
-        # TODO: artist_name is not present in songs dataset
-        # self.artist = track.artist_name.values[0]
-        self.artist = 'Some Artist'
+
+        artist_id = track.artist_id.values[0]
+        artist = artists[artists.artist_id == artist_id]
+        self.artist = artist.artist_name.values[0]
 
         try:
             metadata = API.song_metadata(self.name)
