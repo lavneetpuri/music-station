@@ -10,6 +10,23 @@ http://millionsongdataset.com/pages/getting-dataset/#subset
 
 Script used to filter the important information about all artists (3888)
 
+'artist_id', 'artist_name'
+
+Contains artist ids that are similar to the artists
+'similar_artists', 'num_artists'
+
+Contains tags that are similar to genre
+'artist_tags', 'num_tags'
+
+Similar to tags but have a much larger variety of terms
+'artist_terms', 'num_terms'
+
+Indication of how popular the artists was in 2010
+'artist_hotness'
+
+Indication of how well known the artist was in 2010
+'artist_familiarity'
+
 Usage:
 python3 artist_filter.py from_sql.csv
 
