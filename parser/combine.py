@@ -8,9 +8,6 @@ import pandas as pd
 Data source:
 http://millionsongdataset.com/pages/getting-dataset/#subset
 
-Script used to combined the metadata from the various database files and 
-directory of h5 files into a single csv file.
-
 Script used to combined the aggregated metadata and analysis from the database
 and h5 files into a single csv file. 
 
