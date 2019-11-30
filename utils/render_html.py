@@ -56,7 +56,7 @@ def build_frame(playlists):
         if not isinstance(plist, PlayList):
             raise TypeError('List values must be of type PlayList')
 
-        html_body += render_playlist(plist, song_frame_height)
+        html_body += build_playlist_frame(plist, song_frame_height)
     
     frame = f"""
     <html>
@@ -79,7 +79,7 @@ def build_frame(playlists):
     return HTML(frame.replace('\n', ''))
 
 # returns html structure of the given playlist 
-def render_playlist(playlist, song_frame_height=110):
+def build_playlist_frame(playlist, song_frame_height=110):
     player_url = 'https://w.soundcloud.com/player'
     playlist_body = f"""
     <header><h2 class="header">{playlist.name}</h2></header>
