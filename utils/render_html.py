@@ -46,7 +46,6 @@ html, body {
 # replace css curly braces so that it does not interfere
 # with string interpolation
 style_body = style_body.replace('{\n', '{{').replace('}\n', '}}')
-print('done')
 
 # returns the html with side-by-side rendered playlists
 # pass a list of PlayList objects
