@@ -27,7 +27,7 @@ Install requirements
 
 `pip3 install -r requirements.txt`
 
-Afterwards run the Juputer Notebook
+Afterwards run the Jupyter Notebook
 
 `jupyter-notebook`
 
