@@ -13,6 +13,7 @@ A subset of 10,000 random songs were taken from the dataset to be used in our an
 Create a virtual environment and cd in
 
 >`python3 -m venv <name_of_venv>`
+
 >`cd <name_of_venv>`
 
 Activate the venv which changes your paths
@@ -22,6 +23,7 @@ Activate the venv which changes your paths
 Clone the repository and cd in
 
 >`git clone git@csil-git1.cs.surrey.sfu.ca:bvtrinh/353-project.git`
+
 >`cd 353-project`
 
 Install requirements
