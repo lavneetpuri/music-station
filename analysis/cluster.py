@@ -4,11 +4,6 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from data.main import songs
 
-NUM_CLUSTERS = 10
-
-# dimensions for principle component analysis
-NUM_DIMENSIONS = 2
-
 # return songs with only relevant info for clustering
 def filter_songs(remove_cols):
     # column not needed for clustering
@@ -48,8 +43,4 @@ irrelevant_cols = ['title', 'artist_id']
 # TODO: should these be included?
 irrelevant_cols.extend(['end_of_fade_in', 'start_of_fade_out'])
 
-X = filter_songs(irrelevant_cols)
-clusters = get_clusters(X, NUM_CLUSTERS)
-
-labeled_songs = get_labeled_songs(X, clusters, add_cols=irrelevant_cols)
-songs_principle = get_pca(X, NUM_DIMENSIONS)
+filtered_songs = filter_songs(irrelevant_cols)

@@ -7,7 +7,7 @@ from data.main import songs
 def rand_tracks():
     rand_num = np.random.randint(5,10)
     rand_sample = songs.sample(rand_num)
-    return rand_sample.track_id.values
+    return rand_sample.index.values
 
 # keeps track of name and song list
 class PlayList:
