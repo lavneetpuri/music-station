@@ -1,0 +1,7 @@
+jupyter         # for creating interactive python notebook
+matplotlib      # plotting library
+pandas          # for dictionary like efficient structure with helpful
+                # data manipulation APIs
+scikit-learn    # for machine learning
+seaborn         # for pretty plots
+requests        # for making output HTTP request
