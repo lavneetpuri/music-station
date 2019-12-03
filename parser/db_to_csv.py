@@ -62,7 +62,7 @@ def main(terms_file, similarity_file, metadata_file):
 
     tracks_agg = tracks_agg.drop(['release'], axis=1).set_index('track_id')
 
-    tracks_agg.to_csv('tracks_agg.csv')
+    tracks_agg.to_csv('from_sql.csv')
 
 
 if __name__ == '__main__':
