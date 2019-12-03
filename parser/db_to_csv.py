@@ -18,6 +18,9 @@ from functools import reduce
     NOTE: There are some songs that have NULL/irrelevant columns 
     (ex. artist tags (6290), artist terms (5), year of 0 (5320))
     (Using INNER JOIN (3703))
+
+    Usage:
+    python3 db_to_csv.py subset_artist_term.db subset_artist_similarity.db subset_track_metadata.db
 """
 
 def main(terms_file, similarity_file, metadata_file):
@@ -59,7 +62,7 @@ def main(terms_file, similarity_file, metadata_file):
 
     tracks_agg = tracks_agg.drop(['release'], axis=1).set_index('track_id')
 
-    tracks_agg.to_csv('tracks_agg.csv')
+    tracks_agg.to_csv('from_sql.csv')
 
 
 if __name__ == '__main__':
