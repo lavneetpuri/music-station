@@ -5,7 +5,7 @@ import re
 # return client_id for talking to SoundCloud API
 def fetch_client_id():
     # url of script containing the client_id
-    token_script_url = 'https://a-v2.sndcdn.com/assets/49-832f96e8-3.js'
+    token_script_url = 'https://a-v2.sndcdn.com/assets/48-b4814ad6-3.js'
     req = requests.get(token_script_url)
     if req.status_code != 200:
         raise Warning(
